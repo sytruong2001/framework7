@@ -1,0 +1,22 @@
+/* For phone */
+#add{
+    display: block;
+}
+#add-s{
+    display: none;
+}
+@media only screen and (max-width: 600px) {
+    #add{
+        display: none;
+    }
+    #add-s{
+        display: block;
+        width: 10px;
+        border-radius: 50%;
+        color: rgb(17, 199, 38);
+    }
+  }
+
+.row{
+    padding: 5px;
+}

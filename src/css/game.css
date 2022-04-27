@@ -1,0 +1,56 @@
+.square {
+  color: black;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+  background-color: aliceblue;
+}
+.board-row {
+  display: flex;
+}
+.game-board {
+  margin-left: 260px;
+  display: block;
+}
+.shopping-list {
+  color: red;
+  text-align: center;
+}
+.shopping-list ul {
+  color: yellowgreen;
+}
+.shopping-list ul li {
+  list-style-type: none;
+}
+.btn{
+  width: 50%;
+  align-items: center;
+  line-height: 30px;
+  color: white;
+  background-color: black;
+  border-radius: 20px;
+  box-shadow: black 5px 1px 15px 1px;
+}
+.game{
+  text-align: center;
+}
+.game-hello{
+  height: 100px;
+  width: 100%;
+  display: block;
+}
+/* For phone */
+@media only screen and (max-width: 600px) {
+  .game-board {
+      margin-left: calc(35%);
+      margin-top: 10px;
+    }
+  .game-hello{
+    font-size:10px ;
+    margin-bottom: 30px;
+  }
+}
