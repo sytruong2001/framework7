@@ -147,6 +147,7 @@ class Product extends React.Component {
 
       this.setState({
         list: newList,
+        data: newList,
       });
       alert("Sửa thành công");
       this.state.id = "";
@@ -158,7 +159,7 @@ class Product extends React.Component {
       const rs = confirm("Bạn có chắc muốn xóa không");
       if (rs) {
         let filtered = this.state.list.filter((item) => item.id !== id);
-        this.setState({ list: filtered }, () => {
+        this.setState({ list: filtered, data: filtered }, () => {
           console.log(this.state);
         });
       }
@@ -291,9 +292,7 @@ class Product extends React.Component {
               <Col width="20">{item.nameProd}</Col>
               <Col width="10">{item.nameCate}</Col>
               <Col width="10">
-                {new Intl.NumberFormat("en-IN", {
-                  maximumSignificantDigits: 3,
-                }).format(item.amount)}
+                {new Intl.NumberFormat("en").format(item.amount)}
               </Col>
               <Col width="15">
                 {new Intl.NumberFormat("de-DE", {

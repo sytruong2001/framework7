@@ -56,7 +56,10 @@ const MyApp = () => {
         <View>
           <Page>
             <Navbar title="Left Panel" />
-            <Block>Left panel content goes here</Block>
+            <List>
+              <ListItem link="/category/" title="Category" />
+              <ListItem link="/product/" title="Product" />
+            </List>
           </Page>
         </View>
       </Panel>

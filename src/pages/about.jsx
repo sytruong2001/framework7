@@ -14,6 +14,9 @@ import {
   Row,
   Popup,
   View,
+  NavLeft,
+  NavTitle,
+  NavTitleLarge,
   NavRight,
   ListInput,
   ListButton,
@@ -142,7 +145,16 @@ class Category extends React.Component {
   render() {
     return (
       <Page>
-        <Navbar title="Category" backLink="Back" />
+        <Navbar large sliding={false}>
+          <NavLeft>
+            <Link
+              iconIos="f7:menu"
+              iconAurora="f7:menu"
+              iconMd="material:menu"
+              panelOpen="left"
+            />
+          </NavLeft>
+        </Navbar>
         <BlockTitle>List Category</BlockTitle>
         <Row>
           <Col width="20">
