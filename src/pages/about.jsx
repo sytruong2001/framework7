@@ -105,6 +105,7 @@ class Category extends React.Component {
       sessionStorage.removeItem("data");
       const rs = JSON.stringify(newList);
       sessionStorage.setItem("data", rs);
+
       alert("Sửa thành công");
       this.state.id = "";
       this.handleClose();
@@ -183,7 +184,7 @@ class Category extends React.Component {
           </NavRight>
         </Navbar>
 
-        <BlockTitle>List Category</BlockTitle>
+        <BlockTitle>Danh sách thể loại</BlockTitle>
         <Row>
           <Col width="20">
             <Button fill raised popupOpen="#my-category">

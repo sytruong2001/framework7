@@ -10,7 +10,19 @@ import NotFoundPage from "../pages/404.jsx";
 var routes = [
   {
     path: "/",
-    component: LoginPage,
+    async: function ({ router, to, resolve }) {
+      // App instance
+      var app = router.app;
+      // Show Preloader
+      app.preloader.show();
+      setTimeout(function () {
+        app.preloader.hide();
+        // Resolve route to load page
+        resolve({
+          component: LoginPage,
+        });
+      }, 1000);
+    },
   },
   {
     path: "/home",
