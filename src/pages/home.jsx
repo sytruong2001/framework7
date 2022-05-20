@@ -32,7 +32,7 @@ const HomePage = () => {
             panelOpen="left"
           />
         </NavLeft>
-        <NavTitle sliding>My App</NavTitle>
+        <NavTitle sliding>ST App</NavTitle>
         <NavRight>
           <List>
             <ListItem
