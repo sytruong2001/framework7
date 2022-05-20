@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  f7,
   Page,
   Navbar,
   NavLeft,
@@ -18,8 +19,7 @@ import {
 } from "framework7-react";
 
 const HomePage = () => {
-  const user = JSON.parse(localStorage.getItem("user"));
-
+  const user = JSON.parse(sessionStorage.getItem("user"));
   return (
     <Page name="home">
       {/* Top Navbar */}
@@ -34,21 +34,13 @@ const HomePage = () => {
         </NavLeft>
         <NavTitle sliding>My App</NavTitle>
         <NavRight>
-          <Link
-            iconIos="f7:menu"
-            iconAurora="f7:menu"
-            iconMd="material:menu"
-            panelOpen="right"
-          />
-          {user ? (
-            <List>
-              <ListItem link="/" title="Sign Out" />
-            </List>
-          ) : (
-            <List>
-              <ListItem link="/" title="Sign In" />
-            </List>
-          )}
+          <List>
+            <ListItem
+              style={{ color: "orangered", background: "black" }}
+              link="/"
+              title="Sign Out"
+            />
+          </List>
         </NavRight>
         <NavTitleLarge>Chào mừng {user || "bạn"}</NavTitleLarge>
       </Navbar>
@@ -61,8 +53,8 @@ const HomePage = () => {
       */}
       <BlockTitle>Navigation</BlockTitle>
       <List>
-        <ListItem link="/category/" title="Category" />
-        <ListItem link="/product/" title="Product" />
+        <ListItem link="/category" title="Thể loại" />
+        <ListItem link="/product" title="Truyện tranh" />
       </List>
       <BlockTitle>Modals</BlockTitle>
       <Block strong>

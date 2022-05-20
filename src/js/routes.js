@@ -13,16 +13,16 @@ var routes = [
     component: LoginPage,
   },
   {
-    path: "/home/",
+    path: "/home",
     component: HomePage,
   },
   {
-    path: "/category/",
+    path: "/category",
     component: CategoryPage,
   },
 
   {
-    path: "/product/",
+    path: "/product",
     component: ProductPage,
   },
 

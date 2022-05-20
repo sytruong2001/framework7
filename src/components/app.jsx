@@ -56,10 +56,6 @@ const MyApp = () => {
         <View>
           <Page>
             <Navbar title="Left Panel" />
-            <List>
-              <ListItem link="/category/" title="Category" />
-              <ListItem link="/product/" title="Product" />
-            </List>
           </Page>
         </View>
       </Panel>
@@ -87,7 +83,7 @@ const MyApp = () => {
       <Popup id="my-popup">
         <View>
           <Page>
-            <Navbar title="Ho">
+            <Navbar title="Random name">
               <NavRight>
                 <Link popupClose>Close</Link>
               </NavRight>

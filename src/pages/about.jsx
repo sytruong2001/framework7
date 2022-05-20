@@ -33,10 +33,10 @@ class Category extends React.Component {
       id: "",
       name: "",
       list: [
-        { id: "001", name: "Áo" },
-        { id: "002", name: "Quần" },
-        { id: "003", name: "Giày" },
-        { id: "004", name: "Mũ" },
+        { id: "TL1", name: "Hành động, tình cảm" },
+        { id: "TL2", name: "Ngôn tình" },
+        { id: "TL3", name: "Đam mỹ" },
+        { id: "TL4", name: "Chuyển sinh, xuyên không" },
       ],
       data: [],
     };
@@ -69,10 +69,10 @@ class Category extends React.Component {
   handleSubmit(event) {
     if (this.state.id === "") {
       const listCate = this.state.list;
-      const idCate = listCate[listCate.length - 1].id.slice(1);
+      const idCate = listCate[listCate.length - 1].id.slice(2);
       // console.log(idCate);
       const item = {
-        id: "C" + (parseInt(idCate) + 1),
+        id: "TL" + (parseInt(idCate) + 1),
         name: this.state.name,
       };
       listCate.push(item);
@@ -80,6 +80,9 @@ class Category extends React.Component {
       this.setState({ list: listCate }, () => {
         console.log(this.state);
       });
+      sessionStorage.removeItem("data");
+      const rs = JSON.stringify(this.state.list);
+      sessionStorage.setItem("data", rs);
       this.state.name = "";
     } else {
       const newList = this.state.list.map((item) => {
@@ -97,7 +100,11 @@ class Category extends React.Component {
 
       this.setState({
         list: newList,
+        data: newList,
       });
+      sessionStorage.removeItem("data");
+      const rs = JSON.stringify(newList);
+      sessionStorage.setItem("data", rs);
       alert("Sửa thành công");
       this.state.id = "";
       this.handleClose();
@@ -135,26 +142,47 @@ class Category extends React.Component {
     }
   }
   getData() {
+    const rs = JSON.parse(sessionStorage.getItem("data"));
+    if (rs) {
+      this.state.list = rs;
+    }
     this.setState({
       data: this.state.list,
     });
   }
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.getData();
   }
   render() {
     return (
       <Page>
-        <Navbar large sliding={false}>
-          <NavLeft>
-            <Link
-              iconIos="f7:menu"
-              iconAurora="f7:menu"
-              iconMd="material:menu"
-              panelOpen="left"
-            />
-          </NavLeft>
+        <Navbar sliding={false}>
+          <Navbar title="Quản lý thể loại" backLink="Back" />
+          <NavRight>
+            <List>
+              <ListItem
+                style={{ color: "orangered", background: "black" }}
+                link="/home"
+                title="Trang chủ"
+              />
+            </List>
+            <List>
+              <ListItem
+                style={{ color: "orangered", background: "black" }}
+                link="/product"
+                title="Truyện tranh"
+              />
+            </List>
+            <List>
+              <ListItem
+                style={{ color: "orangered", background: "black" }}
+                link="/"
+                title="Sign Out"
+              />
+            </List>
+          </NavRight>
         </Navbar>
+
         <BlockTitle>List Category</BlockTitle>
         <Row>
           <Col width="20">
