@@ -71,7 +71,7 @@ class Login extends React.Component {
         const user = JSON.stringify(this.state.username);
         sessionStorage.setItem("user", user);
         // console.log(user);
-        this.props.f7router.navigate("/home");
+        this.props.f7router.navigate("/product");
         return;
         // f7router.navigate("/home/");
       } else {

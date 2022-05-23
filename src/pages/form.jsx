@@ -250,11 +250,11 @@ class Product extends React.Component {
     });
     const name = this.state.ten_truyen;
     if (name.length > 1) {
-      const prod = this.state.list.filter((list) => {
+      const list_search = this.state.list.filter((list) => {
         return list.ten_truyen.toLowerCase().includes(name.toLowerCase());
       });
       this.setState({
-        data: prod,
+        data: list_search,
       });
     } else {
       this.getData();
@@ -372,7 +372,9 @@ class Product extends React.Component {
                 {new Intl.NumberFormat("en").format(item.do_dai)} chương
               </Col>
               <Col width="15">{item.trang_thai}</Col>
-              <Col width="10">{item.ten_tac_gia}</Col>
+              <Col width="10" style={{ color: "blue" }}>
+                {item.ten_tac_gia}
+              </Col>
               <Col width="10">
                 <Button
                   onClick={() => this.handleUpdate(item.id)}

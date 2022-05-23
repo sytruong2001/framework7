@@ -50,7 +50,7 @@ var routes = [
 
       // Show Preloader
       app.preloader.show();
-
+      console.log(app);
       // User ID from request
       var userId = to.params.userId;
 
@@ -58,13 +58,13 @@ var routes = [
       setTimeout(function () {
         // We got user data from request
         var user = {
-          firstName: "Vladimir",
-          lastName: "Kharlampidi",
+          firstName: "Trương Văn",
+          lastName: "Sỹ",
           about: "Hello, i am creator of Framework7! Hope you like it!",
           links: [
             {
-              title: "Framework7 Website",
-              url: "http://framework7.io",
+              title: "Link to facebook",
+              url: "https://www.facebook.com/bao.truongthien.35/",
             },
             {
               title: "Framework7 Forum",
